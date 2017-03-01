@@ -1,0 +1,69 @@
+page-about {
+.card {
+    width: 50%;
+    margin: 5px auto;
+}
+h1 {
+    font-family: "Times New Roman", Times, serif;
+}
+.input-group {
+    height: 38px;
+    width: 200% !important;
+    margin: 0 auto;
+    padding: 2px 2px;
+}
+img {
+    width: 100%;
+}
+row {
+    display: inline-flex;
+}
+
+@media screen and (max-width: 544px) {
+    .card {
+        width: 100%;
+        margin: auto;
+    }
+    .input-group {
+        width: 100% !important;
+        margin: 0 auto;
+        padding: 2px 2px;
+    }
+    .col-sm-2 button {
+        height: 50%;
+        width: 30%;
+        font-size: 12px;   
+    }
+    .list-group-item .row .col-sm-2 {
+        display: inline;
+    }
+}
+@media screen and (min-width: 544px){
+    .card {
+        width: 100%;
+        margin: auto;
+    }
+     .input-group {
+        margin: 0 auto;
+        padding: 2px 2px;
+    }
+ }
+@media screen and (min-width: 768px){ 
+    .card {
+        width: 80%;
+        margin: 5px auto;
+    }
+}
+@media screen and (min-width: 992px){ 
+   .card {
+        width: 70%;
+        margin: 5px auto;
+    }
+}
+@media screen and (min-width: 1200px){
+   .card {
+        width: 60%;
+        margin: 5px auto;
+    }
+ }
+}

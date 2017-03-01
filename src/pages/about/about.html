@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      To Do App
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+  <ion-card-header>
+    <ion-item>
+      <ion-label floating>Enter ToDo</ion-label>
+      <ion-input type="text" autofocus required [(ngModel)] = "newTask"></ion-input>
+    </ion-item>
+
+    <span *ngIf="checker()" class="input-group-btn">
+      <button ion-fab mini (click)="addTask()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </span>
+    <span *ngIf="!checker()" class="input-group-btn">
+     <button ion-fab mini  (click)="addTask()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </span>  
+  </ion-card-header>
+
+  <ion-list>
+    <div ion-item *ngFor = "let task of taskList; let i=index">
+      {{task}} 
+      <button ion-fab mini (click)="dltTask(i)">
+        <ion-icon name="trash"></ion-icon>
+      </button>
+      <button ion-fab mini (click)="editTask(task,i)">
+        <ion-icon name="create"></ion-icon>
+      </button>
+    </div>
+  </ion-list>
+</ion-card>
+</ion-content>
