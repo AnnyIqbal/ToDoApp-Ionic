@@ -8,36 +8,32 @@
 
 <ion-content padding>
   <ion-card class="page-about">
-  <ion-card-header class="flexbox">
-    <ion-item class="inline">
-      <ion-label floating>Enter ToDo</ion-label>
-      <ion-input type="text" autofocus required [(ngModel)] = "newTask"></ion-input>
-    </ion-item>
+    <ion-card-header class="flexbox">
+      <ion-item class="inline">
+        <ion-label floating>Enter Task To Do</ion-label>
+        <ion-input type="text" autofocus required [(ngModel)] = "newTask"></ion-input>
+      </ion-item>
 
-    <span *ngIf="checker()" class="inline">
-      <button ion-fab mini (click)="addTask()">
-        <ion-icon name="add"></ion-icon>
-      </button>
-    </span>
-    <span *ngIf="!checker()" class="inline">
-     <button ion-fab mini (click)="addTask()">
-        <ion-icon name="add"></ion-icon>
-      </button>
-    </span>  
-  </ion-card-header>
-
-  <ion-list class="center">
-    <div class="flexbox" ion-item *ngFor = "let task of taskList; let i=index">
-      <span class="inline" style="width: 80%"> 
-        {{task}} 
+      <span *ngIf="checker()" class="inline">
+        <button ion-fab mini (click)="addTask()">
+          <ion-icon name="add"></ion-icon>
+        </button>
       </span>
-        <button class="inline" ion-fab mini color="danger" (click)="dltTask(i)">
-          <ion-icon name="trash"></ion-icon>
-        </button>
-        <button class="inline" ion-fab mini color="secondary" (click)="editTask(task,i)">
-          <ion-icon name="create"></ion-icon>
-        </button>
-    </div>
-  </ion-list>
-</ion-card>
+
+    </ion-card-header>
+
+    <ion-list class="center">
+      <div class="flexbox" ion-item *ngFor = "let task of taskList; let i=index">
+        <span class="inline" style="width: 50vw"> 
+          {{task}} 
+        </span>
+          <button class="inline" ion-fab mini color="danger" (click)="dltTask(i)">
+            <ion-icon name="trash"></ion-icon>
+          </button>
+          <button class="inline" ion-fab mini color="secondary" (click)="editTask(task,i)">
+            <ion-icon name="create"></ion-icon>
+          </button>
+      </div>
+    </ion-list>
+  </ion-card>
 </ion-content>
