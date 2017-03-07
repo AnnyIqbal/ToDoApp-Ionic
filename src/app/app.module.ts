@@ -1,10 +1,19 @@
 import { NgModule, ErrorHandler } from '@angular/core';
+import { AngularFireModule } from 'angularfire2';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+
+  const config = {
+    apiKey: "AIzaSyD7nXgmpe9tgd4Z_nvwNDCGJ25UdD3pmGk",
+    authDomain: "ionic-todoapp-d0b38.firebaseapp.com",
+    databaseURL: "https://ionic-todoapp-d0b38.firebaseio.com",
+    storageBucket: "ionic-todoapp-d0b38.appspot.com",
+    messagingSenderId: "1027551839250"
+  };
 
 @NgModule({
   declarations: [
@@ -15,7 +24,8 @@ import { TabsPage } from '../pages/tabs/tabs';
     TabsPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(config)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
